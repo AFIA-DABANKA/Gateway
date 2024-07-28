@@ -7,10 +7,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/customer", proxy("http://localhost:8001"));
-app.use("/shopping", proxy("http://localhost:8003"));
-app.use("/deliveries", proxy("http://localhost:8004"));
-app.use("/", proxy("http://localhost:8002")); // products
+app.use("/customer", proxy("https://user-management-service-oq58.onrender.com"));
+app.use("/shopping", proxy("https://shopping-management-service-mcya.onrender.com"));
+app.use("/deliveries", proxy("https://delivery-management-service-iihl.onrender.com"));
+app.use("/", proxy("https://product-management-service-46x1.onrender.com")); // products
 
 app.listen(8000, () => {
   console.log("Gateway is Listening to Port 8000");
